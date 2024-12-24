@@ -9,7 +9,7 @@
 import CodeMirror from 'codemirror';
 import emmet from '@emmetio/codemirror-plugin';
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/lucario.css';
+import 'codemirror/theme/monokai.css';
 import 'codemirror/addon/selection/active-line';
 import 'codemirror/addon/edit/matchbrackets';
 import 'codemirror/mode/vue/vue';
@@ -27,11 +27,29 @@ const defaultValue = `<template>
         <a target="_blank" :href="url">{{ url }}</a>
       </li>
     </ul>
+    <Cut>
+      <template #default="{a}">
+        <h3>Slot</h3>
+        <p>{{ a }}</p>
+      </template>
+    </Cut>
   </div>
 </template>
 
 <script>
+
+const Cut = {
+  template:\`
+  <div> 
+    this is a custom component
+    <slot v-bind="{a:1}"></slot>
+  </div>\`
+}
+
 export default {
+  components: {
+    Cut
+  },
   data: () => ({
     msg: 'Vuep.run',
 
@@ -107,7 +125,7 @@ export default {
   async mounted() {
     const editor = CodeMirror.fromTextArea(this.$refs.textarea, {
       mode: 'vue',
-      theme: 'lucario',
+      theme: 'monokai',
       value: `<template></template>`,
       lineNumbers: true,
       tabSize: 2,

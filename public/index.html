@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Vuep.run</title>
+  <style>
+    #app {
+      color: #2c3e50;
+      display: block;
+      text-align: center;
+      margin-top: 40vh;
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+  <meta name="description" content="An online playground for Vue">
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="app">Loading...</div>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.0.0-beta.42/babel.min.js"></script>
+  <script src="/dist/build.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116670534-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-116670534-1');
+  </script>
+</body>
+
+</html>
